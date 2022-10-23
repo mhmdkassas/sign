@@ -1,0 +1,61 @@
+.App {
+  text-align: center;
+}
+
+.button {
+  Position: relative;
+  bottom: -520px;
+}
+
+.sign_in_button {
+  background-color: #f3722c; /* Green */
+  border: none;
+  color: black;
+  padding: 15px 40px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 24px;
+  margin-top: 16px;
+  font-weight: bold;
+}
+
+.sign_in_button:hover {
+  background-color: white; /* Green */
+  border: none;
+  color: #f3722c;
+  padding: 15px 40px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 24px;
+  margin-top: 16px;
+  font-weight: bold;
+}
+
+.header_button {
+  background-color: black; /* Green */
+  border: none;
+  color: #f3722c;
+  padding: 15px 40px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 32px;
+  margin-top: 16px;
+  font-weight: bold;
+}
+
+.header_button:hover {
+  background-color: black; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 40px;
+  text-align: center;
+  text-decoration: underline;
+  display: inline-block;
+  font-size: 32px;
+  margin-top: 16px;
+  font-weight: bold;
+  transition-duration:0.2s;
+}
