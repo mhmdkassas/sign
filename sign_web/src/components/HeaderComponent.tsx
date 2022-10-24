@@ -1,32 +1,53 @@
 import React from "react";
 import Container from "react-bootstrap/Container";
-// import Grid from 'react-bootstrap/Grid';
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Button1 from 'react-bootstrap/Button';
+import button from 'react-bootstrap/button';
 
-{
-  /* <Button border="none" color="#FFFFFF" height="65px" onClick={() => alert("You clicked on the pink circle!")} width="200px" children="Home"/> */
-}
-export function Header() {
-  return (
-    <Container>
-      <Row flex-justify-content>
-        <Col>
-          <Button1 className="header_button">Home</Button1>
-        </Col>
-        <Col>
-          <Button1 className="header_button">Story</Button1>
-        </Col>
-        <Col>
-          <Button1 className="header_button">Details</Button1>
-        </Col>
-        <Col>
-          <Button1 className="header_button">RoadMap</Button1>
-        </Col>
+export function Header(props: {
+  webState: number;
+}): JSX.Element {
+  const webState = props.webState;
+  if (webState === 1) {
+    return (
+      <Container>
+        <Row flex-justify-content>
+          <Col>
+            <button className="header_button">Home</button>
+          </Col>
+          <Col>
+            <button className="header_button">Story</button>
+          </Col>
+          <Col>
+            <button className="header_button">Details</button>
+          </Col>
+          <Col>
+            <button className="header_button">RoadMap</button>
+          </Col>
+          </Row>
+      </Container>
+    );
+  }
+  else {
+    return (
+      <Container className="hidden_header">
+        <Row flex-justify-content>
+          <Col>
+            {/* <button className="hidden_header_button disabled">Home</button> */}
+          </Col>
+          <Col>
+            {/* <button className="hidden_header_button disabled">Story</button> */}
+          </Col>
+          <Col>
+            {/* <button className="hidden_header_button disabled">Details</button> */}
+          </Col>
+          <Col>
+            {/* <button className="hidden_header_button disabled">RoadMap</button> */}
+          </Col>
         </Row>
-    </Container>
-  );
+      </Container>
+    );
+  }
 }
 
 export default Header;

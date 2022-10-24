@@ -2,13 +2,39 @@
   text-align: center;
 }
 
-.button {
-  Position: relative;
-  bottom: -520px;
+.StoryTitle {
+  background-color: black;
+  border: none;
+  font-size: 36px;
+  color: #FF6400;
+  margin-top: 51px;
 }
 
-.sign_in_button {
-  background-color: #f3722c; /* Green */
+.StoryContent {
+  background-color: black;
+  border: none;
+  font-size: 36px;
+  color: #FF6400;
+}
+
+.c1 {
+  background-color: #FF6400;
+  border: none;
+  font-size: 12px;
+  color: black;
+  width: 100%;
+}
+
+.c2 {
+  background-color: black;
+  border: none;
+  font-size: 12px;
+  color: #FF6400;
+  width: 100%;
+}
+
+.SignInButton {
+  background-color: #FF6400; /* Green */
   border: none;
   color: black;
   padding: 15px 40px;
@@ -16,27 +42,28 @@
   text-decoration: none;
   display: inline-block;
   font-size: 24px;
-  margin-top: 16px;
+  margin-top: 10px;
   font-weight: bold;
+  animation: 5s slowReveal;
 }
 
-.sign_in_button:hover {
+.SignInButton:hover {
   background-color: white; /* Green */
   border: none;
-  color: #f3722c;
+  color: #FF6400;
   padding: 15px 40px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 24px;
-  margin-top: 16px;
+  margin-top: 10px;
   font-weight: bold;
 }
 
 .header_button {
   background-color: black; /* Green */
   border: none;
-  color: #f3722c;
+  color: #FF6400;
   padding: 15px 40px;
   text-align: center;
   text-decoration: none;
@@ -44,6 +71,26 @@
   font-size: 32px;
   margin-top: 16px;
   font-weight: bold;
+  animation: 3s slowReveal;
+}
+
+.hidden_header_button {
+  background-color: black; /* Green */
+  border: none;
+  color: #FF6400;
+  padding: 15px 40px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 32px;
+  margin-top: 16px;
+  font-weight: bold;
+  opacity:0;
+}
+
+.hidden_header {
+  width:100%;
+  height: 94px;
 }
 
 .header_button:hover {
@@ -58,4 +105,37 @@
   margin-top: 16px;
   font-weight: bold;
   transition-duration:0.2s;
+}
+
+.header_button:active {
+  background-color: black; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 40px;
+  text-align: center;
+  text-decoration: underline;
+  display: inline-block;
+  font-size: 32px;
+  margin-top: 16px;
+  font-weight: bold;
+  transition-duration:0.2s;
+}
+
+.detailsContainer {
+  width: 100%;
+}
+
+.sign {
+  text-align: center;
+  animation: 5s slowReveal;
+}
+
+@keyframes slowReveal {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
