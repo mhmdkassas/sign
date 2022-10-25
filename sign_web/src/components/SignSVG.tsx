@@ -1,5 +1,5 @@
 import React from 'react';
-import sign from './sign.png';
+import sign from '.././sign.svg';
 
 export function SignSVG() {
     return( 

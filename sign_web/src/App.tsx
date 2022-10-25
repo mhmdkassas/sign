@@ -26,7 +26,7 @@ function App() {
         <Header webState={webState}/>
         <SignSVG/>
         <StoryComponent/>
-        <Details/>
+        {/* <Details/> */}
       </div>
     );
   }

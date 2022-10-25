@@ -8,7 +8,7 @@ export function Header(props: {
   webState: number;
 }): JSX.Element {
   const webState = props.webState;
-  if (webState === 1) {
+  if (webState === 2) {
     return (
       <Container>
         <Row flex-justify-content>
