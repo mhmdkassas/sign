@@ -5,7 +5,7 @@ import "@openzeppelin/contracts/token/ERC1155/ERC1155.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/math/SafeMath.sol";
 
-contract MyERC1155 is ERC1155, Ownable {
+contract Sign is ERC1155, Ownable {
     using SafeMath for uint256;
 
     uint256 public constant INK = 0;
@@ -14,9 +14,7 @@ contract MyERC1155 is ERC1155, Ownable {
     uint256 public totalSignTokens = 0;
     uint256 public inkPrice = 1.5 ether; // Price per INK token
 
-    constructor() ERC1155("") {
-        _mint(msg.sender, INK, totalInkTokens, "");
-    }
+    constructor() ERC1155("") {}
 
     function mintInkTokens(uint256 amount) public payable {
         require(msg.value >= inkPrice.mul(amount), "Insufficient payment");
