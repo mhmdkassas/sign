@@ -10,9 +10,14 @@ contract Sign is ERC1155, Ownable {
 
     uint256 public constant INK = 0;
     uint256 public constant SIGN = 1;
-    uint256 public totalInkTokens = 3000;
+    uint256 public maxInkTokens = 3000;
+    uint256 public totalInkTokens = 0;
+    uint256 public usableInkTokens = 0;
+    uint256 public available = 0;
     uint256 public totalSignTokens = 0;
     uint256 public inkPrice = 1.5 ether; // Price per INK token
+    mapping(address => uint256) public inkBalances; // This is the added state variable
+    uint8[512][512] img;
 
     constructor() ERC1155("") {}
 
@@ -20,6 +25,7 @@ contract Sign is ERC1155, Ownable {
         require(msg.value >= inkPrice.mul(amount), "Insufficient payment");
         
         _mint(msg.sender, INK, amount, "");
+        inkBalances[msg.sender] = inkBalances[msg.sender].add(amount); // Update ink balance
     }
 
     function burnInkTokens(uint256 amount) public {
@@ -46,5 +52,16 @@ contract Sign is ERC1155, Ownable {
     function withdraw() public onlyOwner {
         uint256 balance = address(this).balance;
         payable(owner()).transfer(balance);
+    }
+
+    // Function to retrieve the INK token balance for an account
+    function getInkBalance(address account) public view returns (uint256) {
+        return inkBalances[account];
+    }
+
+    function draw() public {
+        for (uint256 i = 0; i < 25; i++) {
+            img[12][12] = 1;
+        }
     }
 }
